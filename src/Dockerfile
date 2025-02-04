@@ -12,12 +12,22 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 
+RUN apt-get update && apt-get install -y \
+    libgdal-dev \
+    python3-dev \
+    build-essential \
+    libproj-dev
 
-RUN apt-get update && apt-get upgrade -y
+
 
 
 RUN pip install -r requirements.txt
 
+COPY pgbouncer.ini /etc/pgbouncer/pgbouncer.ini
+
+COPY userlist.txt /etc/pgbouncer/userlist.txt
+
+RUN chmod 600 /etc/pgbouncer/pgbouncer.ini /etc/pgbouncer/userlist.txt
 
 COPY . .
 
