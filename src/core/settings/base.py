@@ -17,7 +17,10 @@ THEME_PARTY_APPS = [
 
 
 APPS = [
-    'places'
+    'places',
+    'locations',
+    'categories',
+    'reviews'
 ]
 
 
