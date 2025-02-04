@@ -15,7 +15,7 @@ class Location(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-    def safe(self,  *args, **kwargs):
+    def save(self,  *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
