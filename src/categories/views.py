@@ -5,9 +5,12 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Category
 from .serializers import CategorySerializer
 from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 
 
 class CategoryAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get(self, request):
@@ -26,6 +29,7 @@ class CategoryAPIView(APIView):
 
 
 class CategoryDetailAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_object(self, slug):

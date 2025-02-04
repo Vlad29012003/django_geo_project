@@ -6,9 +6,11 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from .models import Place, PlaceImage
 from .serializers import PlaceSerializer, PlaceImageSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
 class PlaceAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
     parser_classes = [MultiPartParser, FormParser]
 
@@ -37,6 +39,7 @@ class PlaceAPIView(APIView):
 
 
 class PlaceDetailAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
     parser_classes = [MultiPartParser, FormParser]
 
@@ -68,6 +71,7 @@ class PlaceDetailAPIView(APIView):
 
 
 class PlaceImageUploadAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
     parser_classes = [MultiPartParser, FormParser]
 

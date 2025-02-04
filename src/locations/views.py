@@ -5,9 +5,11 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Location
 from .serializers import LocationSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
 class LocationAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
@@ -35,6 +37,7 @@ class LocationAPIView(APIView):
 
 
 class LocationDetailAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
