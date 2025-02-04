@@ -16,6 +16,11 @@ THEME_PARTY_APPS = [
 ]
 
 
+APPS = [
+    'places'
+]
+
+
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
 
@@ -27,8 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     *THEME_PARTY_APPS,
-
-]
+    *APPS,]
 
 
 MIDDLEWARE = [
