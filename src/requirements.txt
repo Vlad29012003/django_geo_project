@@ -1,0 +1,9 @@
+Django>=4.2,<5.0
+gdal==3.0.4
+djangorestframework
+drf-yasg
+django-cors-headers
+django-filter
+psycopg2-binary
+geojson
+python-decouple

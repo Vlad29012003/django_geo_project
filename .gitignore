@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# Virtual Environment
+venv/
+env/
+
+# Django
+*.sqlite3
+/media/
+staticfiles/
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# Docker
+*.pid
+*.log
+.env
+
+# Migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+
+# Pytest, Coverage
+.coverage
+htmlcov/
+*.cover
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.mo
+*.pot
+
+# Ignore PostgreSQL dump files
+*.dump
