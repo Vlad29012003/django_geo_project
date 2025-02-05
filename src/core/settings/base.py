@@ -26,7 +26,6 @@ APPS = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
 
 INSTALLED_APPS = [
@@ -51,23 +50,28 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'core.urls'
 
-TIME_ZONE = 'Asia/Bishkek'
-
 WSGI_APPLICATION = 'core.wsgi.application'
 
-ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+TIME_ZONE = 'Asia/Bishkek'
 
 LANGUAGE_CODE = 'en-us'
 
-STATIC_URL = 'static/'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 CORS_ALLOW_METHODS = [
@@ -87,7 +91,9 @@ SWAGGER_SETTINGS = {
             'name': 'Authorization',
             'in': 'header'
         }
-    }
+    },
+    'USE_SESSION_AUTH': False,
+    'VALIDATOR_URL': None,
 }
 
 
